@@ -11,18 +11,18 @@ import time
 
 def llm_accuracy(questions, predictions, references, split):
     client = OpenAI(
-        api_key="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"
+        api_key="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"
     )
 
-    if len(questions) >= 500:
+    if len(questions) >= 200:
         # Get the length of the lists
         list_length = len(questions)
 
         # Sample 1000 random indices
         if split != 1:
-            random_indices = random.sample(range(list_length), 500//split)
+            random_indices = random.sample(range(list_length), 200//split)
         else:
-            random_indices = random.sample(range(list_length), 500)
+            random_indices = random.sample(range(list_length), 200)
 
         # Extract sampled elements from the lists
         questions = [questions[i] for i in random_indices]
